@@ -5,7 +5,7 @@ export default function App() {
   const [undoneTasks, setUndoneTasks] = useState([]);
 
   useEffect(() => {
-    const undons = [
+    const undones = [
       {
         id: 1,
         name: 'Learning react',
@@ -27,7 +27,7 @@ export default function App() {
       },
     ];
 
-    setUndoneTasks(undons);
+    setUndoneTasks(undones);
   }, []);
 
   return (
@@ -40,20 +40,9 @@ export default function App() {
       <div className="undone-area common-style">
         <p className="area-title">undone</p>
         <ul>
-          <li>
-            <div className="list-row">
-              <p>Learning react</p>
-              <button>Complete</button>
-              <button>Delete</button>
-            </div>
-          </li>
-          <li>
-            <div className="list-row">
-              <p>Learning react</p>
-              <button>Complete</button>
-              <button>Delete</button>
-            </div>
-          </li>
+          {undoneTasks.forEach((undone) => {
+            return <UndoneTasks tasks={undone} />;
+          })}
         </ul>
       </div>
 
