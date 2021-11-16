@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import UndoneTasks from './components/UndoneTasks';
 import './style.css';
 
 export default function App() {
@@ -40,9 +41,11 @@ export default function App() {
       <div className="undone-area common-style">
         <p className="area-title">undone</p>
         <ul>
-          {undoneTasks.forEach((undone) => {
+          <UndoneTasks tasks={undoneTasks} />
+          {/* {undoneTasks.forEach((undone) => {
+            console.log(undone);
             return <UndoneTasks tasks={undone} />;
-          })}
+          })} */}
         </ul>
       </div>
 

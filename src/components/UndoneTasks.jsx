@@ -1,15 +1,21 @@
-const UndoneTasks = ({ task }) => {
+import React from 'react';
+
+const UndoneTasks = ({ tasks }) => {
   return (
     <>
-      <li>
-        <div className="list-row">
-          <p>{task}</p>
-          <button>Complete</button>
-          <button>Delete</button>
-        </div>
-      </li>
+      {tasks.forEach((task) => {
+        return (
+          <li key={task.id}>
+            <div className="list-row">
+              <p>{task.name}</p>
+              <button>Complete</button>
+              <button>Delete</button>
+            </div>
+          </li>
+        );
+      })}
     </>
   );
 };
 
-export default Footer;
+export default UndoneTasks;
